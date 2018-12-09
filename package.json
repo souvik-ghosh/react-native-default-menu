@@ -4,10 +4,7 @@
   "description": "Menu component for showing default OS menus. Uses ActionSheetIOS for ios and UIManager for android",
   "private": false,
   "license": "MIT",
-  "author": {
-    "name": "Souvik Ghosh",
-    "email": "emailtosvk@gmail.com"
-  },
+  "author": "Souvik Ghosh <emailtosvk@gmail.com>",
   "homepage": "https://github.com/souvik-ghosh/react-native-default-menu",
   "repository": {
     "type": "git",
@@ -31,5 +28,17 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/souvik-ghosh/react-native-default-menu/issues"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-component",
+    "android",
+    "ios",
+    "menu",
+    "popup",
+    "action-sheet"
+  ]
 }
