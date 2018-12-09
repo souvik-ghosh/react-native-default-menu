@@ -1,6 +1,6 @@
 {
   "name": "react-native-default-menu",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Menu component for showing default OS menus. Uses ActionSheetIOS for ios and UIManager for android",
   "private": false,
   "license": "MIT",

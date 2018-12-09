@@ -48,7 +48,9 @@ const PopupMenu = props => {
           name={"more-vert" || props.icon}
           size={props.iconSize || 24}
           color={"grey" || props.color}
-          ref={node => (this.iconRef = node)}
+          ref={node => {
+            this.iconRef = node;
+          }}
         />
       </TouchableWithoutFeedback>
     </View>
