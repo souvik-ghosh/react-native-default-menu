@@ -1,6 +1,6 @@
 {
   "name": "react-native-default-menu",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Menu component for showing default OS menus. Uses ActionSheetIOS for ios and UIManager for android",
   "private": false,
   "license": "MIT",
@@ -10,20 +10,21 @@
     "type": "git",
     "url": "git://github.com/souvik-ghosh/react-native-default-menu.git"
   },
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "16.6.1",
-    "react-native": "0.57.5",
+    "react-native": "0.57.5"
+  },
+  "dependencies": {
     "react-native-vector-icons": "^6.1.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.49.2",
     "react-test-renderer": "16.6.1"
   },
   "jest": {
