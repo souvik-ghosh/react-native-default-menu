@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   View,
   UIManager,
@@ -9,31 +9,35 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-const Menu = props => {
-  this.showActionSheet = () => {
-    const options = ["Cancel", ...props.actions];
+export default class Menu extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  showActionSheet = () => {
+    const options = ["Cancel", ...this.props.actions];
     ActionSheetIOS.showActionSheetWithOptions(
       {
         options,
         cancelButtonIndex: 0,
-        destructiveButtonIndex: props.destructiveButtonIndexIos + 1 || -1
+        destructiveButtonIndex: this.props.destructiveButtonIndexIos + 1 || -1
       },
       buttonIndex => {
-        props.onPress(options[buttonIndex], buttonIndex - 1);
+        this.props.onPress(options[buttonIndex], buttonIndex - 1);
       }
     );
   };
 
-  this.showPopupMenu = () => {
+  showPopupMenu = () => {
     UIManager.showPopupMenu(
       findNodeHandle(this.iconRef),
-      props.actions,
-      props.onError || (() => console.log("Popup Error")),
-      props.onPress
+      this.props.actions,
+      this.props.onError || (() => console.log("Popup Error")),
+      this.props.onPress
     );
   };
 
-  const onPress = () => {
+  onPress = () => {
     if (Platform.OS === "ios") {
       this.showActionSheet();
       return;
@@ -41,20 +45,20 @@ const Menu = props => {
     this.showPopupMenu();
   };
 
-  return (
-    <View style={props.style}>
-      <TouchableWithoutFeedback onPress={onPress}>
-        <Icon
-          name={"more-vert" || props.icon}
-          size={props.iconSize || 24}
-          color={"grey" || props.color}
-          ref={node => {
-            this.iconRef = node;
-          }}
-        />
+  render() {
+    return (
+      <TouchableWithoutFeedback onPress={this.onPress}>
+        <View style={{ alignItems: 'center', justifyContent: "center" }}>
+          <Icon
+            name={"more-vert" || this.props.icon}
+            size={this.props.iconSize || 24}
+            color={"grey" || this.props.color}
+            ref={node => {
+              this.iconRef = node;
+            }}
+          />
+        </View>
       </TouchableWithoutFeedback>
-    </View>
-  );
-};
-
-export default Menu;
+    );
+  }
+}
