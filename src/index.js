@@ -1,38 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   View,
   UIManager,
   findNodeHandle,
   TouchableWithoutFeedback,
   ActionSheetIOS,
-  Platform,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+  Platform
+} from "react-native";
+import PropTypes from "prop-types";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 export default class Menu extends Component {
   showActionSheet = () => {
-    const { actions, destructiveButtonIndex, onPress } = this.props;
-    const options = ['Cancel', ...actions];
+    const { options, destructiveButtonIndex, onPress } = this.props;
+    const actions = ["Cancel", ...options];
     ActionSheetIOS.showActionSheetWithOptions(
       {
-        options,
+        options: actions,
         cancelButtonIndex: 0,
-        destructiveButtonIndex: destructiveButtonIndex + 1 || -1,
+        destructiveButtonIndex: destructiveButtonIndex + 1 || -1
       },
       buttonIndex => {
-        onPress(options[buttonIndex], buttonIndex - 1);
+        onPress(actions[buttonIndex], buttonIndex - 1);
       }
     );
   };
 
   showPopupMenu = () => {
-    const { actions, onError, onPress } = this.props;
+    const { options, onError, onPress } = this.props;
     const node = findNodeHandle(this.iconRef);
-    UIManager.showPopupMenu(node, actions, onError, onPress);
+    UIManager.showPopupMenu(node, options, onError, onPress);
   };
 
   onPress = () => {
-    if (Platform.OS === 'ios') {
+    if (Platform.OS === "ios") {
       this.showActionSheet();
       return;
     }
@@ -43,11 +44,11 @@ export default class Menu extends Component {
     const { color, icon, iconSize } = this.props;
     return (
       <TouchableWithoutFeedback onPress={this.onPress}>
-        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Icon
-            name={'more-vert' || icon}
+            name={"more-vert" || icon}
             size={iconSize || 24}
-            color={'grey' || color}
+            color={"grey" || color}
             ref={node => {
               this.iconRef = node;
             }}
@@ -57,3 +58,14 @@ export default class Menu extends Component {
     );
   }
 }
+
+Menu.propTypes = {
+  options: PropTypes.array,
+  cancelButtonIndex: PropTypes.number,
+  onPress: PropTypes.func,
+  destructiveButtonIndex: PropTypes.number,
+  optionalObject: PropTypes.object,
+  name: PropTypes.string,
+  color: PropTypes.string,
+  onError: PropTypes.func
+};
