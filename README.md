@@ -58,23 +58,26 @@ export default class App extends Component {
     this.state = {
       eventName: 'none',
       index: 'none',
+      selectedOption: 'none'
     };
   }
 
   onPopupEvent = (eventName, index) => {
-    if (eventName === 'itemSelected') eventName = options[index];
-    this.setState({ eventName, index });
+    let selectedOption = 'none'
+    if (index) selectedOption = options[index];
+    this.setState({ eventName, index, selectedOption });
   };
   
   render() {
     return (
       <View style={styles.container}>
-        <View>
+        <View style={{ padding: 20 }}>
           <Menu options={options} onPress={this.onPopupEvent} />
         </View>
         <View style={{ padding: 15 }}>
           <Text style={styles.text}>{`event: ${this.state.eventName}`}</Text>
           <Text style={styles.text}> {`index: ${this.state.index}`}</Text>
+          <Text style={styles.text}> {`index: ${this.state.selectedOption}`}</Text>
         </View>
       </View>
     );
@@ -88,6 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     padding: 8,
   },
+  text: { fontSize: 30 },
 });
 
 ```
