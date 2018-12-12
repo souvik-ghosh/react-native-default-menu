@@ -17,15 +17,13 @@ or
 ```js
 ...
 import Menu from 'react-native-default-menu';
-
+...
 const options = ['Edit', 'Remove'];
 ...
-
 onPopupEvent = (eventName, index) => {
   if (eventName === 'itemSelected') eventName = options[index];
   console.log(eventName, index)
 };
-
 ...
 render() {
   return(
@@ -33,8 +31,6 @@ render() {
       <Menu options={options} onPress={this.onPopupEvent} />
     </View>
    )
-2
-[![https://nodei.co/npm/react-native-default-menu.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/react-native-default-menu.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/react-native-default-menu)
 }
 ```
 ## Demo
