@@ -1,6 +1,6 @@
 # react-native-default-menu
 
-[![npm Version](https://img.shields.io/npm/v/react-native-default-menu.svg)](https://www.npmjs.com/package/react-native-default-menu) [![License](https://img.shields.io/npm/l/react-native-default-menu.svg)](https://www.npmjs.com/package/react-native-default-menu) [![Build Status](https://travis-ci.org/souvik-ghosh/react-native-default-menu.svg)](https://travis-ci.org/souvik-ghosh/react-native-default-menu)
+[![npm Version](https://img.shields.io/npm/v/react-native-default-menu.svg)](https://www.npmjs.com/package/react-native-default-menu) [![License](https://img.shields.io/npm/l/react-native-default-menu.svg)](https://www.npmjs.com/package/react-native-default-menu)
 
 Menu component for showing default OS menus. Uses ActionSheetIOS for IOS and UIManager for Android
 
