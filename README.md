@@ -30,8 +30,9 @@ onPopupEvent = (eventName, index) => {
   // the second argument is the index of the option that got pressed
   console.log('index', index);
   // if cancelled it returns -1 and IOS and  undefined on Android as index
-  if (index) option = options[index]; // get option name from index
-  console.log('option', option);
+  let option;
+  if (index) option = options[index]; // get option name
+  console.log('selected option', option);
 };
 ...
 render() {
@@ -46,7 +47,7 @@ render() {
 ## Complete example
 
 ```js
-import React {Component} from 'react';
+import React, {Component} from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Menu from 'react-native-default-menu';
 
