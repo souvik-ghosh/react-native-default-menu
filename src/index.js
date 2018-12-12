@@ -21,7 +21,7 @@ export default class Menu extends Component {
         destructiveButtonIndex: destructiveButtonIndex + 1 || -1
       },
       buttonIndex => {
-        onPress(actions[buttonIndex], buttonIndex - 1);
+        onPress(actions[buttonIndex], buttonIndex > 0 ? buttonIndex - 1 : undefined);
       }
     );
   };
