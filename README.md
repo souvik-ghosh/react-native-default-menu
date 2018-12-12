@@ -27,9 +27,9 @@ const options = ['Edit', 'Remove'];
 onPopupEvent = (eventName, index) => {
   // on IOS it returns the option name as first argument
   // on Android it returns 'itemSelected' or 'dismissed' as first argument
-  // the second argument is the index of the option that got pressed
+  // the second argument is the index of the selected option
   console.log('index', index);
-  // if cancelled it returns -1 and IOS and  undefined on Android as index
+  // if cancelled it returns -1 0n IOS and undefined on Android as index
   let option;
   if (index) option = options[index]; // get option name
   console.log('selected option', option);
