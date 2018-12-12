@@ -6,7 +6,11 @@ Menu component for showing default OS menus. Uses ActionSheetIOS for IOS and UIM
 
 ## Installation
 
-`$ npm i react-native-default-menu` or `$ yarn add react-native-modal`
+`npm i react-native-default-menu` 
+
+or
+
+`yarn add react-native-modal`
 
 ## Usage
 
