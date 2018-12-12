@@ -5,4 +5,4 @@
 
 Menu component for showing default OS menus. Uses ActionSheetIOS for IOS and UIManager for Android
 
-![](iphone.webp)
+![](iphone.webp) ![](android.webp)
