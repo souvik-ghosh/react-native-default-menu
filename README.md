@@ -25,6 +25,9 @@ import Menu from 'react-native-default-menu';
 const options = ['Edit', 'Remove'];
 ...
 onPopupEvent = (eventName, index) => {
+  // on IOS it returns the option name as first argument
+  // on Android it returns 'itemSelected' or 'dismissed' as first argument
+  // the second argument is the index of the option that got pressed
   if (eventName === 'itemSelected') eventName = options[index];
   console.log(eventName, index)
 };
