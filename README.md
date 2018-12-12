@@ -37,7 +37,9 @@ onPopupEvent = (eventName, index) => {
 render() {
   return(
     <View>
-      <Menu options={options} onPress={this.onPopupEvent} />
+      <Menu options={options} onPress={this.onPopupEvent}>
+        <Text>click me</Text>
+      </Menu>
     </View>
    )
 }
@@ -46,9 +48,10 @@ render() {
 ## Complete Example
 
 ```js
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import Menu from './PopupMenu';
+import Menu from 'react-native-default-menu';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const options = ['Edit', 'Remove'];
 
@@ -58,21 +61,23 @@ export default class App extends Component {
     this.state = {
       eventName: 'none',
       index: 'none',
-      selectedOption: 'none'
+      selectedOption: 'none',
     };
   }
 
   onPopupEvent = (eventName, index) => {
-    let selectedOption = 'none'
+    let selectedOption = 'none';
     if (index >= 0) selectedOption = options[index];
     this.setState({ eventName, index, selectedOption });
   };
-  
+
   render() {
     return (
       <View style={styles.container}>
         <View style={{ padding: 20 }}>
-          <Menu options={options} onPress={this.onPopupEvent} />
+          <Menu options={options} onPress={this.onPopupEvent} style={{height: 30, width: 30}}>
+            <Icon name={'more-vert'} size={24} color={'grey'} />
+          </Menu>
         </View>
         <View style={{ padding: 15 }}>
           <Text style={styles.text}>{`event: ${this.state.eventName}`}</Text>
