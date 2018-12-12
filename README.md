@@ -12,6 +12,10 @@ or
 
 `yarn add react-native-default-menu`
 
+## Demo
+
+![](iphone.webp) ![](android.webp)
+
 ## Usage
 
 ```js
@@ -33,9 +37,6 @@ render() {
    )
 }
 ```
-## Demo
-
-![](iphone.webp) ![](android.webp)
 
 ## Complete example
 
