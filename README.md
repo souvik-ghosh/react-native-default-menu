@@ -29,7 +29,7 @@ onPopupEvent = (eventName, index) => {
   // on Android it returns 'itemSelected' or 'dismissed' as first argument
   // the second argument is the index of the selected option
   console.log('index', index);
-  // if cancelled it returns -1 0n IOS and undefined on Android as index
+  // if cancelled it returns -1 on IOS and undefined on Android as index
   let option;
   if (index) option = options[index]; // get option name
   console.log('selected option', option);
@@ -44,7 +44,7 @@ render() {
 }
 ```
 
-## Complete example
+## Complete Example
 
 ```js
 import React, {Component} from 'react';
